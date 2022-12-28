@@ -1,0 +1,15 @@
+html, body {
+    height: 100%;
+}
+body {
+  margin: 0;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.container2 {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
