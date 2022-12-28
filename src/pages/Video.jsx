@@ -24,10 +24,8 @@ import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
 
-// const server_url =  "https://video-server-5yhj.onrender.com/"
-const PORT = process.env.PORT || 4001
-const HOST = window.location.hostname
-const server_url = "https://"+ `${HOST}:`+`${PORT}`
+const server_url =  "https://health-direct-global.onrender.com/"
+
 var connections = {}
 const peerConnectionConfig = {
 	'iceServers': [
