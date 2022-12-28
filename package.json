@@ -37,9 +37,9 @@
     "xss": "^1.0.14"
   },
   "scripts": {
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon app.js\" \"react-scripts start\"",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"node app.js\" \"react-scripts start\"",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "concurrently \"node app.js\" \"react-scripts build\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
