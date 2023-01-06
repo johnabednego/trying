@@ -301,7 +301,7 @@ class Video extends Component {
 		return { marginTop }
 	}
 	connectToSocketServer = () => {
-		socket = io.connect(server_url, { transports: ['websocket'], jsonp:false, forceNew: true })
+		socket = io.connect(server_url, { secure:true })
 
 		socket.on('signal', this.gotMessageFromServer)
 
