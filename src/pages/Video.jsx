@@ -24,8 +24,8 @@ import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
 
- const server_url =  "https://health-direct-global.onrender.com/"
-// const server_url = "server-production-aea1.up.railway.app"
+// const server_url =  "https://health-direct-global.onrender.com/"
+const server_url = "server-production-aea1.up.railway.app"
 
 var connections = {}
 const peerConnectionConfig = {
