@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import io from 'socket.io-client'
+import socketIO  from 'socket.io-client'
 import { NavBar } from '../components/NavBar';
 import profile from '../components/assets/profile-lg.jpg'
 import { IconButton, Badge, Input, Button } from '@material-ui/core'
@@ -301,7 +301,7 @@ class Video extends Component {
 		return { marginTop }
 	}
 	connectToSocketServer = () => {
-		socket = io.connect(server_url, { secure: true })
+		socket = socketIO.connect(server_url, { secure: true })
 
 		socket.on('signal', this.gotMessageFromServer)
 
