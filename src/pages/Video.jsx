@@ -18,14 +18,15 @@ import { VideoText } from "../components/VideoText"
 import EmojiPicker from 'emoji-picker-react';
 
 import { message } from 'antd'
-// import 'antd/dist/antd.css'
 
 import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
 
+import {UserDetails} from '../components/UserDetails'
+
 // const server_url =  "https://health-direct-global.onrender.com/"
-const server_url = "server-production-aea1.up.railway.app"
+const server_url = "https://server-production-aea1.up.railway.app/"
 
 var connections = {}
 const peerConnectionConfig = {
@@ -59,6 +60,7 @@ class Video extends Component {
 			askForUsername: true,
 			username: "",
 			showEmojis: false,
+			userDetails:true
 		}
 		connections = {}
 
@@ -529,6 +531,7 @@ class Video extends Component {
 		this.setState({ message: this.state.message + emojiData.emoji })
 	};
 
+	handleUserDetails = ()=>this.setState({userDetails:!this.state.userDetails})
 	// isChrome = function () {
 	// 	let userAgent = (navigator && (navigator.userAgent || '')).toLowerCase()
 	// 	let vendor = (navigator && (navigator.vendor || '')).toLowerCase()
@@ -680,7 +683,10 @@ class Video extends Component {
 										padding: "0px", objectFit: "fill",
 										width: "100%", height: "100%"
 									}}></video>
-									<VideoText profile={profile} username={this.state.username} />
+									<VideoText handleUserDetails={this.handleUserDetails} profile={profile} username={this.state.username} />
+									{this.state.userDetails?
+									<UserDetails/>:""	
+								}
 								</div>
 							</div>
 						</div>
